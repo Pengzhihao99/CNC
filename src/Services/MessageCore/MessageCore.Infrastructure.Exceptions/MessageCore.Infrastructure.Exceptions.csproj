@@ -1,0 +1,68 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Class1.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="ErrorMessage.resx">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>ErrorMessage.tt</DependentUpon>
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ErrorMessage.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\BuildingBlocks\Framework\Framework.Infrastructure.Crosscutting\Framework.Infrastructure.Crosscutting.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="ErrorCode.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ErrorCode.tt.cs</LastGenOutput>
+    </None>
+    <None Update="ErrorMessage.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ErrorMessage.resx</LastGenOutput>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Service Include="{508349b6-6b84-4df5-91f0-309beebad82d}" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="ErrorCode - 复制.cs">
+      <DependentUpon>ErrorCode - 复制.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Update="ErrorCode.tt.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>ErrorCode.tt</DependentUpon>
+    </Compile>
+    <Compile Update="ErrorMessage.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>ErrorMessage.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="ErrorMessage.resx">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>ErrorMessage.tt</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+
+</Project>

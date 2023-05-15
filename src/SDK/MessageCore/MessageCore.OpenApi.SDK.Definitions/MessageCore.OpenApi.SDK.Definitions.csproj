@@ -1,0 +1,74 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>net40;net45;net6.0;</TargetFrameworks>
+    <LangVersion>latest</LangVersion>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+
+    <!-- 包信息配置-->
+    <Title>MessageCore.OpenApi.SDK.Definitions</Title>
+    <Authors>zhihao.peng</Authors>
+    <Company>BFE</Company>
+    <Copyright>Copyright BEF©2023, All Rights Reserved.</Copyright>
+    <PackageTags>CNC</PackageTags>
+    <Version>1.0.2</Version>
+    <Description>通知中心系统OpenApi DTO包</Description>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <PackageReleaseNotes>
+		1.0.0 创建包，添加创建消息接口Dto，支持.Net4.0, .Net 4.5, .Net 6.0 三个框架下的目标
+		1.0.1 创建包，添加两个简易创建消息接口Dto，支持.Net4.0, .Net 4.5, .Net 6.0 三个框架下的目标
+		1.0.2 调整DTO，支持.Net4.0, .Net 4.5, .Net 6.0 三个框架下的目标
+	</PackageReleaseNotes>
+    <SignAssembly>False</SignAssembly>
+  </PropertyGroup>
+
+  <!-- 通过条件输出注释文件到不同路径 -->
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>bin\Debug\$(TargetFramework)\$(MSBuildProjectName).xml</DocumentationFile>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DocumentationFile>bin\Release\$(TargetFramework)\$(MSBuildProjectName).xml</DocumentationFile>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net40|AnyCPU'">
+    <DefineConstants>$(DefineConstants);SDK</DefineConstants>
+    <Optimize>False</Optimize>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net40|AnyCPU'">
+    <DefineConstants>$(DefineConstants);SDK</DefineConstants>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net45|AnyCPU'">
+    <DefineConstants>$(DefineConstants);SDK</DefineConstants>
+    <Optimize>False</Optimize>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net45|AnyCPU'">
+    <DefineConstants>$(DefineConstants);SDK</DefineConstants>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net6.0|AnyCPU'">
+    <DefineConstants>$(DefineConstants);SDK</DefineConstants>
+    <Optimize>False</Optimize>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net6.0|AnyCPU'">
+    <DefineConstants>$(DefineConstants);SDK</DefineConstants>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="CreateOrderCommand.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="..\..\..\Services\MessageCore\MessageCore.Application\OpenApi\Commands\OrderCommand\CreateOrderCommand.cs" Link="CreateOrderCommand.cs" />
+    <Compile Include="..\..\..\Services\MessageCore\MessageCore.Application\OpenApi\Commands\OrderCommand\CreateSimpleEmailCommand.cs" Link="CreateSimpleEmailCommand.cs" />
+    <Compile Include="..\..\..\Services\MessageCore\MessageCore.Application\OpenApi\Commands\OrderCommand\CreateSimpleEnterpriseWeChatCommand.cs" Link="CreateSimpleEnterpriseWeChatCommand.cs" />
+    <Compile Include="..\..\..\Services\MessageCore\MessageCore.Application\OpenApi\DataTransferModels\AttachmentDto.cs" Link="AttachmentDto.cs" />
+  </ItemGroup>
+
+</Project>

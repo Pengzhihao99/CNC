@@ -1,0 +1,33 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
+    <DocumentationFile>obj\Debug\net6.0\MessageCore.Application.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="OpenApi\ResponseModels\" />
+    <Folder Include="Share\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FluentValidation.AspNetCore" Version="11.1.2" />
+    <PackageReference Include="MailKit" Version="3.4.2" />
+    <PackageReference Include="MediatR" Version="10.0.1" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    <PackageReference Include="RestSharp" Version="108.0.3" />
+    <PackageReference Include="Scriban" Version="5.5.0" />
+    <PackageReference Include="System.Collections" Version="4.3.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\BuildingBlocks\Framework\Framework.Application.Core\Framework.Application.Core.csproj" />
+    <ProjectReference Include="..\..\..\BuildingBlocks\Framework\Framework.Infrastructure.UOW\Framework.Infrastructure.UOW.csproj" />
+    <ProjectReference Include="..\MessageCore.Domain\MessageCore.Domain.csproj" />
+    <ProjectReference Include="..\MessageCore.Infrastructure.Exceptions\MessageCore.Infrastructure.Exceptions.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ErrorCodes>
+	<Segment Name="MessageCore" BeginCode="800F8000" EndCode="800F8100">
+		<ErrorCode Name="UnhandledError" Code="800F8000" Message="系统出现未处理异常：{0}" Comment="MessageCore"/>
+		<ErrorCode Name="CommandValidateError" Code="800F8001" Message="数据验证失败：{0}" Comment="MessageCore"/>
+		<ErrorCode Name="MessageBlockingNotFoundError" Code="800F8002" Message="找不到消息拦截数据：{0}" Comment="MessageCore"/>
+		<ErrorCode Name="IssuerNotFoundError" Code="800F8003" Message="找不到发起人信息：{0}" Comment="MessageCore"/>
+		<ErrorCode Name="ValidateError" Code="800F8004" Message="数据验证失败：{0}" Comment="MessageCore"/>
+		<ErrorCode Name="TemplateNotFoundError" Code="800F8005" Message="找不到模板信息：{0}" Comment="MessageCore"/>
+		<ErrorCode Name="SendingServiceEnabledError" Code="800F8006" Message="消息服务{0}未开启" Comment="MessageCore"/>
+		<ErrorCode Name="MessageSendingServiceNotFoundError" Code="800F8007" Message="找不到消息服务：{0}" Comment="MessageCore"/>
+		<ErrorCode Name="LoginFail" Code="800F8008" Message="用户：{0}，登录失败！{1}" Comment="MessageCore"/>
+		<ErrorCode Name="SendingServiceTypeError" Code="800F8009" Message="发送信息服务类型错误！" Comment="MessageCore"/>
+		<ErrorCode Name="EmailServiceNotFound" Code="800F8010" Message="找不到邮件服务！" Comment="MessageCore"/>
+		<ErrorCode Name="SmsServiceNotFound" Code="800F8011" Message="找不到短信服务！" Comment="MessageCore"/>
+		<ErrorCode Name="EnterpriseWeChatServiceNotFound" Code="800F8012" Message="找不到企业微信服务！" Comment="MessageCore"/>
+		<ErrorCode Name="SimpleEnterpriseWeChatServiceError" Code="800F8013" Message="发送企业微信失败：{0}" Comment="MessageCore"/>
+		<ErrorCode Name="LogoutFail" Code="800F8014" Message="登出失败！{1}" Comment="MessageCore"/>
+		<ErrorCode Name="GetUserInfoError" Code="800F8015" Message="获取用户信息失败：{0}" Comment="MessageCore"/>
+		<ErrorCode Name="ValidateTokenError" Code="800F8016" Message="登陆失败：{0}" Comment="MessageCore"/>
+
+	</Segment>
+</ErrorCodes>

@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Hangfire.AspNetCore" Version="1.7.30" />
+    <PackageReference Include="Hangfire.Redis.StackExchange" Version="1.8.5" />
+    <PackageReference Include="Serilog.AspNetCore" Version="6.0.0" />
+    <PackageReference Include="Serilog.Expressions" Version="3.4.0" />
+    <PackageReference Include="Serilog.Sinks.Async" Version="1.5.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MessageCore.Infrastructure.Ioc.AutofacModule\MessageCore.Infrastructure.Ioc.AutofacModule.csproj" />
+    <ProjectReference Include="..\MessageCore.Infrastructure.Service.Configure\MessageCore.Infrastructure.Service.Configure.csproj" />
+  </ItemGroup>
+
+</Project>

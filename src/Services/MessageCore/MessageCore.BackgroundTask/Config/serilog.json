@@ -1,0 +1,129 @@
+{
+  "Serilog": {
+    //日志等级有小到大：Verbose->Debug->Information->Warning->Error->Fatal
+    "Using": [
+      "Serilog.Sinks.Async","Serilog.Expressions"
+    ],
+    "MinimumLevel": {
+      "Default": "Information",
+      "Override": {
+        "Microsoft.AspNetCore": "Warning"
+      }
+    },
+    "WriteTo": [
+      {
+        "Name": "Console"
+      },
+      //{
+      //  "Name": "File",
+      //  "Args": {
+      //    "path": "./logs/serilog/all-.log",
+      //    "rollingInterval": "Day"
+      //  }
+      //},
+      {
+        "Name": "Async",
+        "Args": {
+          "configure": [
+            {
+              "Name": "Logger",
+              "Args": {
+                "configureLogger": {
+                  "Filter": [
+                    {
+                      "Name": "ByIncludingOnly",
+                      "Args": {
+                        "expression": "@l = 'Information'"
+                      }
+                    }
+                  ],
+                  "WriteTo": [
+                    {
+                      "Name": "File",
+                      "Args": {
+                        "path": "./logs/serilog/informations/log-.log",
+                        "rollingInterval": "Day"
+                      }
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "Name": "Logger",
+              "Args": {
+                "configureLogger": {
+                  "Filter": [
+                    {
+                      "Name": "ByIncludingOnly",
+                      "Args": {
+                        "expression": "@l = 'Warning'"
+                      }
+                    }
+                  ],
+                  "WriteTo": [
+                    {
+                      "Name": "File",
+                      "Args": {
+                        "path": "./logs/serilog/warnings/log-.log",
+                        "rollingInterval": "Day"
+                      }
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "Name": "Logger",
+              "Args": {
+                "configureLogger": {
+                  "Filter": [
+                    {
+                      "Name": "ByIncludingOnly",
+                      "Args": {
+                        "expression": "@l = 'Error'"
+                      }
+                    }
+                  ],
+                  "WriteTo": [
+                    {
+                      "Name": "File",
+                      "Args": {
+                        "path": "./logs/serilog/errors/log-.log",
+                        "rollingInterval": "Day"
+                      }
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "Name": "Logger",
+              "Args": {
+                "configureLogger": {
+                  "Filter": [
+                    {
+                      "Name": "ByIncludingOnly",
+                      "Args": {
+                        "expression": "@l = 'Fatal'"
+                      }
+                    }
+                  ],
+                  "WriteTo": [
+                    {
+                      "Name": "File",
+                      "Args": {
+                        "path": "./logs/serilog/fatals/log-.log",
+                        "rollingInterval": "Day"
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      }
+    ]
+  }
+}
