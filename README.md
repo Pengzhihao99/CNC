@@ -1,10 +1,10 @@
 系统简码：CNC<br />
 系统简称：NotificationCenter<br />
-系统全称：出口易消息中心管理系统<br />
+系统全称：消息中心管理系统<br />
 
 # OpenApi及SDK包调用说明：<br />
 
-出口易消息中心管理系统登录：Https://cnc.chukou1.cn/#/login<br />
+消息中心管理系统登录：Https://cnc.chukou1.cn/#/login<br />
 
 ## SDK包说明：
 SDK包：MessageCore.OpenApi.SDK<br />
@@ -45,14 +45,14 @@ POST: api/v1/orders<br />
         "Subject": "包裹",
         "Header": "测试人员",
         "Content": "特别提醒",
-        "Footer": "BFE"
+        "Footer": "BABC"
     },
     "sender":"SRM",
     "token":"94e7012529134a67a83a140255d76ced",
     "receivers": [
         {
             "name": "张三",
-            "email": "san.zhang@chukou1.com",
+            "email": "san.zhang@163.com",
             "phone": "12345678910",
             "enterpriseWeChat": "12345"
         }
@@ -89,7 +89,7 @@ POST: api/v1/orders<br />
     "sender":"SRM",
     "token":"94e7012529134a67a83a140255d76ced",
     "receivers":[
-        "test@chukou1.com"
+        "test@163.com"
     ]
 }
 ```
@@ -102,7 +102,7 @@ POST: api/v1/orders<br />
     "sender":"SRM",
     "token":"94e7012529134a67a83a140255d76ced",
     "receivers":[
-        "test@chukou1.com"
+        "test@163.com"
     ],
     "attachments":[
         {
